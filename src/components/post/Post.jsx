@@ -37,7 +37,8 @@ const Post = () => {
             {/* Header */}
             {/* Avatar Username three dots */}
             <Box 
-              m={1}
+              mt={1}
+              mb={1}
               sx={{
                 display:'flex',
                 justifyContent:'space-between'
@@ -88,17 +89,13 @@ const Post = () => {
             {/* like comment share bookmark */}
                 <Box
                   sx={{
-                    pl:1,
-                    pr:1,
+                    // pl:1,
+                    // pr:1,
                     display:'flex',
                     justifyContent:'space-between'
                   }}
                 >
                   <Stack direction='row' spacing={1}
-                    // sx={{
-                    //   display:'flex',
-                    //   justifyContent:'space-evenly'
-                    // }}
                   >
                     <FavoriteBorderIcon/>
                     {/* <FavoriteIcon/> */}

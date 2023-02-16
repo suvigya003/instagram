@@ -1,18 +1,20 @@
 import React from 'react'
 import Navbar from '../navbar/Navbar'
-import {Grid} from '@mui/material';
+import {Grid, Stack} from '@mui/material';
 import { Box } from '@mui/system';
 import Post from '../post/Post';
+import Suggestions from '../suggestions/Suggestions';
+import Story from '../story/Story';
 
 const HomePage = () => {
   return (
     <>
         <Grid container>
-            <Grid item lg={2}>
+            <Grid item sm={2}>
                 <Navbar/>
             </Grid>
-            <Grid item lg={10}>
-                <Grid container spacing={5}>
+            <Grid item sm={10}>
+                {/* <Grid container spacing={5}>
                   <Grid item lg={7} sm={12}>
                     <Box 
                       sx={{
@@ -44,7 +46,28 @@ const HomePage = () => {
                       Hello 2
                     </Box>
                   </Grid>
-                </Grid>
+                </Grid> */}
+                <Box sx={{
+                  mt:'10vh',
+                  display:'flex',
+                  justifyContent:'center'
+                }} >
+                  <Stack direction='row' spacing={6}>
+                  <Box sx={{
+                    maxWidth:'470px',
+                    border:'1px solid black'
+                  }} >
+                    <Story />
+                    <Post />
+                  </Box>
+                  <Box sx={{
+                    width:'320px',
+                    border:'1px solid black'
+                  }} >
+                    <Suggestions />
+                  </Box>
+                  </Stack>                  
+                </Box>
             </Grid>
         </Grid>
     </>
