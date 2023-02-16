@@ -51,7 +51,7 @@ const Navbar = ({color}) => {
       borderColor:'#DBDBDB'
     }}
     >
-      {/* <Box sx={{
+      <Box sx={{
         maxWidth:'100%',
         p:'30px 12px 20px 12px',
         // border:'1px solid black'
@@ -64,7 +64,7 @@ const Navbar = ({color}) => {
             height:'auto'
             }}
         />
-      </Box>   */}
+      </Box>  
       <Box
         sx={{
           maxWidth:'100%',
