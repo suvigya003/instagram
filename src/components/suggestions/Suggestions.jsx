@@ -1,61 +1,6 @@
 import { Avatar, Box, Button, Typography } from '@mui/material'
 import React from 'react'
 
-function demoSuggestion(){
-    return (
-        <>
-            <Box 
-              mt={1}
-              mb={1}
-              sx={{
-                display:'flex',
-                justifyContent:'space-between'
-              }}
-            >
-              <Box 
-                sx={{
-                  display:'flex',
-                  alignItems:'center'
-                }}
-              >
-                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{width:34,height:34 , mr:1}} /> */}
-                <Avatar sx={{ bgcolor: 'orangered', width:34,height:34, mr:2 }}>S</Avatar>
-                <Box>
-                <Typography
-                  sx={{
-                    fontSize:'14px',
-                    fontWeight:'500'
-                  }}
-                >
-                  suvigyaTripathi{/*{username} */}
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize:'14px',
-                    fontWeight:'400',
-                    color:'#8E8E8E'
-                  }}
-                >
-                  Followed by suvigyaTripathi
-                </Typography>
-                </Box>                
-              </Box>
-              <Button sx={{
-                minHeight: 0, minWidth: 0, padding: 0, textTransform:'none'
-              }}>
-                <Typography sx={{
-                    fontSize:'12px',
-                    fontWeight:700,
-                    color:'#1EA1F7'
-                }}>
-                    Follow
-                </Typography>
-              </Button>
-            </Box>
-        </>
-    )
-}
-
 
 const Suggestions = () => {
   return (
