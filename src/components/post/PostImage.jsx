@@ -1,4 +1,5 @@
 
+
 import Explore from '../explore/Explore'
 import React, { useState } from 'react'
 import Slider from "react-slick";
@@ -8,61 +9,39 @@ import { Box, Button, Typography } from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-const Story = () => {
+const PostImage = () => {
 
   const [sliderRef, setSliderRef] = useState(null)
   
   const sliderSetting={
-    slidesToShow:5,
+    slidesToShow:1,
     slidesToScroll:1,
     infinite:true,
     accessibility:true,
-    responsive:[
-      {
-        breakpoint:768,
-        settings:{
-          slidesToShow:6
-        }
-      },
-      {
-        breakpoint:500,
-        settings:{
-          slidesToShow:5
-        }
-      }
-    ]
   }
 
   const storyStyle={
-    width:'60px',
-    height:'60px',
+    // width:'60px',
+    // height:'60px',
+    // position:'absolute',
+    // top:'50%',
     margin:'0 auto',
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center'
     // border:'1px solid black'
   }
 
   const storyPicStyle={
     width:'100%',
-    height:'100%',
+    // borderTop: '1px solid lightgray',
+    // borderBottom: '1px solid lightgray',
+    // height:'100%',
     backgroundPosition:'center',
-    backgroundSize:'cover',
-    // objectFit: 'contain',      //cover is maintaining aspect ratio and dimensions of outer tag so it's not needed
-    borderRadius:'50%',
+    objectFit: 'contain',
+    // backgroundSize:'cover',
   }
 
-  const storyProfileNameStyle={   
-    width:'50px',
-    height:'20px',
-    margin:'0 auto',
-    overflow: "hidden", 
-    textOverflow: "ellipsis", 
-    display:'block',
-    align:'center',
-    // display:'flex',
-    // width:'100%'
-    // justifyContent:'center',
-    // wordWrap:'break-word',       // not useful
-    // border:'1px solid black'
-  }
 
   const leftButtonStyle={
     borderRadius:'50%', 
@@ -132,7 +111,8 @@ const Story = () => {
       <Box sx={{
         mb:'5vh',
         position:'relative',
-        height:'100%'
+        height:'100%',
+        bgcolor:'black'
       }} >
           <Box>
           <Button sx={{
@@ -165,13 +145,8 @@ const Story = () => {
           {profile.map((ele,index)=>(
             <Box key={index}  >
               <Box style={storyStyle}>
-                <img src={ele.profilePic} alt='pic' style={storyPicStyle} />                              
+                <img src={ele.profilePic} alt='pic' style={storyPicStyle} /> 
               </Box>
-              <Box sx={storyProfileNameStyle} >
-                  <Typography sx={{fontSize:'12px'}} >
-                    {ele.profileName}
-                  </Typography>
-                </Box>
             </Box>
           ))}
         </Slider>
@@ -183,4 +158,4 @@ const Story = () => {
   )
 }
 
-export default Story
+export default PostImage

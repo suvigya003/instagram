@@ -5,6 +5,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import React,{useState} from 'react'
+import PostImage from './PostImage'
 
 const style = {
   position: 'absolute',
@@ -89,9 +90,10 @@ const Post = () => {
             </Box>
             {/* Image */}
             <Box>
-              <img src="images/post/gary-bendig-6GMq7AGxNbE-unsplash.jpg" /*{imageUrl}*/  alt="Goddess Durga" 
+              {/* <img src="images/post/gary-bendig-6GMq7AGxNbE-unsplash.jpg" alt="Goddess Durga" 
                 style={postImgStyle}
-              />
+              /> */}
+              <PostImage />
             </Box>
             {/* Text */}
             {/* like comment share bookmark */}
