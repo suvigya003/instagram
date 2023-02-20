@@ -109,7 +109,6 @@ const PostImage = () => {
     <>
       <Box>
       <Box sx={{
-        mb:'5vh',
         position:'relative',
         height:'100%',
         bgcolor:'black'
