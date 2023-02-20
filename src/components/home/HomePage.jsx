@@ -48,21 +48,19 @@ const HomePage = () => {
                   </Grid>
                 </Grid> */}
                 <Box sx={{
-                  mt:'10vh',
+                  mt:'7vh',
                   display:'flex',
                   justifyContent:'center'
                 }} >
                   <Stack direction='row' spacing={6}>
                   <Box sx={{
                     maxWidth:'470px',
-                    border:'1px solid black'
                   }} >
                     <Story />
                     <Post />
                   </Box>
                   <Box sx={{
                     width:'320px',
-                    border:'1px solid black'
                   }} >
                     <Suggestions />
                   </Box>

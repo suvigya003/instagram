@@ -1,4 +1,5 @@
 import { Box, Divider,Avatar, Typography,Button, Stack, Modal } from '@mui/material'
+import TextField from '@mui/material/TextField';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
@@ -22,8 +23,21 @@ const style = {
 const Post = () => {
 
   const [open, setOpen] = useState(false);
+  const [like, setLike] = useState(false);
+  const [bookmarked, setBookmarked] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const handleLike = () => setLike(true);
+  const handleUnLike = () => setLike(false);
+  const handleBookmark =()=>setBookmarked(true);
+  const handleUnBookmark = () => setBookmarked(false);
+
+  const postImgStyle={    
+    width: '100%', /*to keep the img of screen's size always and not it's own size*/
+    objectFit: 'contain',/*to not stretch the image*/
+    borderTop: '1px solid lightgray',
+    borderBottom: '1px solid lightgray'
+  }
 
   return (
     <>
@@ -31,7 +45,6 @@ const Post = () => {
             sx={{
                 maxWidth:'100%',
                 m:'10px 0px',
-                // border:'1px solid blue'
             }}
         >
             {/* Header */}
@@ -76,13 +89,8 @@ const Post = () => {
             </Box>
             {/* Image */}
             <Box>
-              <img src="images/post/ladakh.jpg" /*{imageUrl}*/  alt="Goddess Durga" 
-                style={{
-                  width: '100%', /*to keep the img of screen's size always and not it's own size*/
-                  objectFit: 'contain',/*to not stretch the image*/
-                  borderTop: '1px solid lightgray',
-                  borderBottom: '1px solid lightgray'
-                }}
+              <img src="images/post/gary-bendig-6GMq7AGxNbE-unsplash.jpg" /*{imageUrl}*/  alt="Goddess Durga" 
+                style={postImgStyle}
               />
             </Box>
             {/* Text */}
@@ -97,8 +105,17 @@ const Post = () => {
                 >
                   <Stack direction='row' spacing={1}
                   >
-                    <FavoriteBorderIcon/>
-                    {/* <FavoriteIcon/> */}
+                    {
+                      like?(
+                        <Button onClick={handleUnLike} sx={{minHeight: 0, minWidth: 0, padding: 0,}}>
+                          <FavoriteIcon sx={{color:'red'}}/>
+                        </Button>
+                      ):(
+                        <Button onClick={handleLike} sx={{minHeight: 0, minWidth: 0, padding: 0}}>
+                          <FavoriteBorderIcon sx={{color:'black'}}/>
+                        </Button>
+                      )
+                    }
                     <img src="images/post/comment.png" style={{
                       height:'25px',
                       width:'25px'
@@ -110,8 +127,17 @@ const Post = () => {
                     }} />
                   </Stack>
                   <Box>
-                    <BookmarkBorderIcon/>
-                    {/* <BookmarkIcon/> */}
+                    {
+                      bookmarked?(
+                        <Button onClick={handleUnBookmark} sx={{minHeight: 0, minWidth: 0, padding: 0,}} >
+                        <BookmarkIcon sx={{color:'black'}}/>
+                     </Button>
+                      ):(                        
+                     <Button onClick={handleBookmark} sx={{minHeight: 0, minWidth: 0, padding: 0,}}>
+                     <BookmarkBorderIcon  sx={{color:'black'}} />
+                   </Button>
+                      )
+                    }
                   </Box>
                 </Box>
             {/* username caption */}
@@ -150,6 +176,21 @@ const Post = () => {
               </Typography>
               {/* time */}
             </Box>
+            {/* comment */}
+            <Box pl={1}>
+            <TextField variant='standard' 
+              fullWidth
+              multiline
+              placeholder="Add a comment..."
+              InputProps={{
+                disableUnderline:true,
+                style:{
+                  fontSize:'14px'
+                }
+              }}
+            />
+            </Box>
+            
         </Box>
         <Divider/>
 
