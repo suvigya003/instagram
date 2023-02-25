@@ -124,6 +124,7 @@ const PostImage = () => {
             m:0,
             height:0,
             width:0,
+            ":focus": { outline: 'none' },
           }} 
           onClick={sliderRef?.slickPrev} >
             <ChevronLeftIcon  sx={leftButtonStyle}  />
@@ -137,6 +138,7 @@ const PostImage = () => {
             m:0,
             height:0,
             width:0,
+            ":focus": { outline: 'none' },
           }} onClick={sliderRef?.slickNext} >
             <ChevronRightIcon sx={rightButtonStyle} />
           </Button>

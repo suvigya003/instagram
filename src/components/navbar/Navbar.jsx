@@ -100,10 +100,11 @@ const Navbar = ({ color }) => {
             <ListItem sx={{
               padding:'0px'
             }} >
-              <Link to="/" style={{ textDecoration: 'none' }}>
+              
                 {home ? (
+                  <Link to="/" style={{ textDecoration: 'none' }}>
                   <ListItemButton
-                    sx={{ borderRadius: '50px' }}
+                    sx={{ borderRadius: '50px',p:'12px' }}
                     onClick={handleNotHome}
                     
                   >
@@ -121,10 +122,10 @@ const Navbar = ({ color }) => {
                       <Typography sx={{ fontWeight: 500, color:'black' }}>Home</Typography>
                     </ListItemText>
                   </ListItemButton>
-                  
+                  </Link>
                 ) : (
                   <ListItemButton
-                    sx={{ borderRadius: '50px' }}
+                    sx={{ borderRadius: '50px',p:'12px' }}
                     onClick={handleHome}
                     
                   >
@@ -141,14 +142,14 @@ const Navbar = ({ color }) => {
                     <ListItemText sx={{ ml: '12px' }}>Home</ListItemText>
                   </ListItemButton>
                 )}
-              </Link>
+              
             </ListItem>
             <ListItem sx={{
               padding:'0px'
             }} >
               {search ? (
                 <ListItemButton
-                  sx={{ borderRadius: '50px' }}
+                  sx={{ borderRadius: '50px',p:'12px' }}
                   onClick={handleNotSearch}
                   
                 >
@@ -170,7 +171,7 @@ const Navbar = ({ color }) => {
                 </ListItemButton>
               ) : (
                 <ListItemButton
-                  sx={{ borderRadius: '50px' }}
+                  sx={{ borderRadius: '50px',p:'12px' }}
                   onClick={handleSearch}
                   
                 >
@@ -191,10 +192,11 @@ const Navbar = ({ color }) => {
             <ListItem sx={{
               padding:'0px'
             }} >
-              <Link to="/explore" style={{ textDecoration: 'none' }}>
+              
                 {explore ? (
+                  <Link to="/explore" style={{ textDecoration: 'none' }}>
                   <ListItemButton
-                    sx={{ borderRadius: '50px' }}
+                    sx={{ borderRadius: '50px',p:'12px' }}
                     onClick={handleNotExplore}
                     
                   >
@@ -214,11 +216,12 @@ const Navbar = ({ color }) => {
                       </Typography>
                       </ListItemText>
                   </ListItemButton>
+                  </Link>
                 ) : (
+                  <Link to="/explore" style={{ textDecoration: 'none' }}>
                   <ListItemButton
-                    sx={{ borderRadius: '50px' }}
+                    sx={{ borderRadius: '50px',p:'12px' }}
                     onClick={handleExplore}
-                    
                   >
                     <ListItemIcon>
                       <img
@@ -232,8 +235,9 @@ const Navbar = ({ color }) => {
                     </ListItemIcon>
                     <ListItemText sx={{ ml: '12px' }}>Explore</ListItemText>
                   </ListItemButton>
+                  </Link>
                 )}
-              </Link>
+              
             </ListItem>
             <ListItem sx={{
               padding:'0px'
@@ -241,7 +245,7 @@ const Navbar = ({ color }) => {
               <Link to="/reels/videos" style={{ textDecoration: 'none' }}>
                 {reels ? (
                   <ListItemButton
-                    sx={{ borderRadius: '50px' }}
+                    sx={{ borderRadius: '50px',p:'12px' }}
                     onClick={handleNotReels}
                     
                   >
@@ -263,7 +267,7 @@ const Navbar = ({ color }) => {
                   </ListItemButton>
                 ) : (
                   <ListItemButton
-                    sx={{ borderRadius: '50px' }}
+                    sx={{ borderRadius: '50px',p:'12px' }}
                     onClick={handleReels}
                     
                   >
@@ -288,7 +292,7 @@ const Navbar = ({ color }) => {
                             <Link to="/direct/inbox" style={{ textDecoration: 'none' }}>
                 {messages ? (
                   <ListItemButton
-                    sx={{ borderRadius: '50px',p:'0px' }}
+                    sx={{ borderRadius: '50px',p:'12px',p:'0px' }}
                     onClick={handleNotMessages}
                     
                   >
@@ -310,7 +314,7 @@ const Navbar = ({ color }) => {
                   </ListItemButton>
                 ) : (
                   <ListItemButton
-                    sx={{ borderRadius: '50px' }}
+                    sx={{ borderRadius: '50px',p:'12px' }}
                     onClick={handleMessages}
                     
                   >
@@ -334,7 +338,7 @@ const Navbar = ({ color }) => {
             }} >
               {notifications ? (
                 <ListItemButton
-                  sx={{ borderRadius: '50px' }}
+                  sx={{ borderRadius: '50px',p:'12px' }}
                   onClick={handleNotNotifications}
                   
                 >
@@ -356,7 +360,7 @@ const Navbar = ({ color }) => {
                 </ListItemButton>
               ) : (
                 <ListItemButton
-                  sx={{ borderRadius: '50px' }}
+                  sx={{ borderRadius: '50px',p:'12px' }}
                   onClick={handleNotifications}
                   
                 >
@@ -380,7 +384,7 @@ const Navbar = ({ color }) => {
               {
                 create?(
                   <ListItemButton
-                sx={{ borderRadius: '50px' }}
+                sx={{ borderRadius: '50px',p:'12px' }}
                 
                 onClick={handleOpen}
               >
@@ -402,7 +406,7 @@ const Navbar = ({ color }) => {
               </ListItemButton>
                 ):(
                   <ListItemButton
-                sx={{ borderRadius: '50px' }}
+                sx={{ borderRadius: '50px',p:'12px' }}
                 
                 onClick={handleOpen}
               >
@@ -426,7 +430,7 @@ const Navbar = ({ color }) => {
               padding:'0px'
             }} >
               <Link to="/" style={{ textDecoration: 'none' }}>
-                <ListItemButton sx={{ borderRadius: '50px' }} >
+                <ListItemButton sx={{ borderRadius: '50px',p:'12px',p:'12px' }} >
                   <ListItemIcon>
                     <img
                       src=""

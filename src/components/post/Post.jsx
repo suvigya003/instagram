@@ -76,7 +76,7 @@ const Post = () => {
                 </Typography>
               </Box>
               <Button onClick={handleOpen} sx={{
-                minHeight: 0, minWidth: 0, padding: 0, pr:1
+                minHeight: 0, minWidth: 0, padding: 0, pr:1,":focus": { outline: 'none' },
               }}>
               <img 
                       src="images/post/more.png" 
@@ -109,11 +109,11 @@ const Post = () => {
                   >
                     {
                       like?(
-                        <Button onClick={handleUnLike} sx={{minHeight: 0, minWidth: 0, padding: 0,}}>
+                        <Button onClick={handleUnLike} sx={{minHeight: 0, minWidth: 0, padding: 0,":focus": { outline: 'none' },}}>
                           <FavoriteIcon sx={{color:'red'}}/>
                         </Button>
                       ):(
-                        <Button onClick={handleLike} sx={{minHeight: 0, minWidth: 0, padding: 0}}>
+                        <Button onClick={handleLike} sx={{minHeight: 0, minWidth: 0, padding: 0,":focus": { outline: 'none' },}}>
                           <FavoriteBorderIcon sx={{color:'black'}}/>
                         </Button>
                       )
@@ -131,11 +131,11 @@ const Post = () => {
                   <Box>
                     {
                       bookmarked?(
-                        <Button onClick={handleUnBookmark} sx={{minHeight: 0, minWidth: 0, padding: 0,}} >
+                        <Button onClick={handleUnBookmark} sx={{minHeight: 0, minWidth: 0, padding: 0,":focus": { outline: 'none' },}} >
                         <BookmarkIcon sx={{color:'black'}}/>
                      </Button>
                       ):(                        
-                     <Button onClick={handleBookmark} sx={{minHeight: 0, minWidth: 0, padding: 0,}}>
+                     <Button onClick={handleBookmark} sx={{minHeight: 0, minWidth: 0, padding: 0,":focus": { outline: 'none' },}}>
                      <BookmarkBorderIcon  sx={{color:'black'}} />
                    </Button>
                       )

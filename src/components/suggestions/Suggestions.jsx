@@ -45,8 +45,10 @@ const Suggestions = () => {
                 </Typography>
                 </Box>                
               </Box>
-              <Button sx={{
-                minHeight: 0, minWidth: 0, padding: 0, textTransform:'none'
+              <Button  sx={{
+                minHeight: 0, minWidth: 0, padding: 0, 
+                ":focus": { outline: 'none' },  
+                textTransform:'none',
               }}>
                 <Typography sx={{
                     fontSize:'12px',
@@ -56,6 +58,7 @@ const Suggestions = () => {
                     Switch
                 </Typography>
               </Button>
+              {/* <Button variant="text">Text</Button> */}
             </Box>
             <Box sx={{
                 display:'flex',
@@ -70,6 +73,7 @@ const Suggestions = () => {
                 </Typography>
                 <Button sx={{
                 minHeight: 0, minWidth: 0, padding: 0, textTransform:'none',
+                ":focus": { outline: 'none' },  
               }}>
                 <Typography sx={{
                     fontSize:'12px',
@@ -120,7 +124,8 @@ const Suggestions = () => {
                 </Box>                
               </Box>
               <Button sx={{
-                minHeight: 0, minWidth: 0, padding: 0, textTransform:'none'
+                minHeight: 0, minWidth: 0, padding: 0, textTransform:'none', 
+                ":focus": { outline: 'none' },  
               }}>
                 <Typography sx={{
                     fontSize:'12px',

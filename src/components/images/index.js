@@ -1,4 +1,5 @@
 export default {
+    //Navbar icons
     selectedHome: require('./navbar/homepage.png'),
     logo: require('./navbar/instaNameLogo.jpg'),
     home: require('./navbar/home.png'),
@@ -14,4 +15,15 @@ export default {
     notifications: require('./navbar/heart (1).png'),
     selectedCreate: require('./navbar/add.png'),
     create: require('./navbar/tab.png'),
+
+    // other trial images
+    man:require('./story/amir-mohammad-hp-mFadZWL9UiI-unsplash.jpg'),
+    woman: require('./story/art-hauntington-jzY0KRJopEI-unsplash.jpg'),
+    pug: require('./story/charlesdeluvio-Mv9hjnEUHR4-unsplash.jpg'),
+    lion: require('./story/francesco-ZxNKxnR32Ng-unsplash.jpg'),
+    tiger:require('./story/kar-ming-moo-Q_3WmguWgYg-unsplash.jpg'),
+    bird: require('./story/kevin-mueller-aeNg4YA41P8-unsplash.jpg'),
+    deer: require('./story/laura-college-K_Na5gCmh38-unsplash.jpg'),
+    girl: require('./story/x-sLGYaQ_stMM-unsplash.jpg'),
+    squirrel: require('./story/gary-bendig-6GMq7AGxNbE-unsplash.jpg')
 };
