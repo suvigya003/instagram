@@ -20,23 +20,23 @@ const PostImage = () => {
     accessibility:true,
   }
 
-  const storyStyle={
+  const postStyle={
     // width:'60px',
-    // height:'60px',
+    // height:'600px',
     // position:'absolute',
     // top:'50%',
-    margin:'0 auto',
+    // margin:'0 auto',
     display:'flex',
     alignItems:'center',
-    justifyContent:'center'
-    // border:'1px solid black'
+    justifyContent:'center',
+    // border:'5px solid red'
   }
 
-  const storyPicStyle={
+  const postPicStyle={
     width:'100%',
     // borderTop: '1px solid lightgray',
     // borderBottom: '1px solid lightgray',
-    // height:'100%',
+    height:'90vh',
     backgroundPosition:'center',
     objectFit: 'contain',
     // backgroundSize:'cover',
@@ -111,7 +111,8 @@ const PostImage = () => {
       <Box sx={{
         position:'relative',
         height:'100%',
-        bgcolor:'black'
+        bgcolor:'black',
+        // border:'5px solid blue',
       }} >
           <Box>
           <Button sx={{
@@ -142,9 +143,9 @@ const PostImage = () => {
         </Box>
         <Slider ref={setSliderRef} {...sliderSetting}>
           {profile.map((ele,index)=>(
-            <Box key={index}  >
-              <Box style={storyStyle}>
-                <img src={ele.profilePic} alt='pic' style={storyPicStyle} /> 
+            <Box key={index} >
+              <Box style={postStyle}>
+                <img src={ele.profilePic} alt='pic' style={postPicStyle} /> 
               </Box>
             </Box>
           ))}

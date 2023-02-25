@@ -1,0 +1,17 @@
+export default {
+    selectedHome: require('./navbar/homepage.png'),
+    logo: require('./navbar/instaNameLogo.jpg'),
+    home: require('./navbar/home.png'),
+    selectedSearch: require('./navbar/magnifying-glass.png'),
+    search: require('./navbar/search.png'),
+    selectedExplore: require('./navbar/explore (2).png'),
+    explore: require('./navbar/explore.png'),
+    selectedReels: require('./navbar/video (1).png'),
+    reels: require('./navbar/video.png'),
+    selectedMessenger: require('./navbar/messenger (2).png'),
+    messenger: require('./navbar/messenger.png'),
+    selectedNotifications: require('./navbar/heart.png'),
+    notifications: require('./navbar/heart (1).png'),
+    selectedCreate: require('./navbar/add.png'),
+    create: require('./navbar/tab.png'),
+};

@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import Navbar from '../navbar/Navbar';
 
 const Explore = () => {
 
@@ -124,8 +125,13 @@ const Explore = () => {
   ]
 
   return (
-    <Box>
-      <Box sx={{
+    <>
+    <Grid container>
+      <Grid item sm={2}>
+        <Navbar/>
+      </Grid>
+      <Grid item sm={10}>
+        <Box sx={{
         mb:'5vh',
         position:'relative',
         height:'100%'
@@ -173,8 +179,9 @@ const Explore = () => {
           ))}
         </Slider>
       </Box>
-        
-    </Box>
+      </Grid>
+      </Grid>
+    </>
   )
 }
 
