@@ -1,8 +1,15 @@
+import { Box} from '@mui/material'
 import React from 'react'
+import SearchCss from './SearchCss'
 
-const Search = () => {
+const Search = ({searchTab}) => { 
+
   return (
-    <div>Search</div>
+    <>
+        <Box sx={searchTab?SearchCss.sideBarActive:SearchCss.sideBar}>
+            Hello Search
+        </Box>
+    </>
   )
 }
 

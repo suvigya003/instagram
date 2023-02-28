@@ -14,6 +14,7 @@ import {
 } from '@mui/material'
 import { Link } from 'react-router-dom'
 import images from '../images'
+import Search from '../search/Search'
 // import instaNameLogo from 'images/navbar/instaNameLogo.jpg'
 
 const style = {
@@ -40,26 +41,30 @@ const Navbar = ({ color }) => {
   const [messages, setMessages] = useState(false)
   const [notifications, setNotifications] = useState(false)
   const [create, setCreate] = useState(false)
+  const [searchTab, setSearchTab] = useState(false)
   const handleOpen = () => {
     setOpen(true)
     setCreate(true)
-  } 
+  }
   const handleClose = () => {
     setOpen(false)
     setCreate(false)
-  } 
-  const handleHome=()=>setHome(true);
-  const handleNotHome=()=>setHome(false);
-  const handleSearch = () =>setSearch(true);
-  const handleNotSearch = () =>setSearch(false);
-  const handleExplore = () => setExplore(true);
-  const handleNotExplore = () => setExplore(false);
-  const handleReels = () => setReels(true);
-  const handleNotReels = () => setReels(false);
-  const handleMessages = () => setMessages(true);
-  const handleNotMessages = () => setMessages(false);
-  const handleNotifications = () => setNotifications(true);
-  const handleNotNotifications = () => setNotifications(false);
+  }
+  const handleHome = () => setHome(true)
+  const handleNotHome = () => setHome(false)
+  const handleSearch = () => setSearch(true)
+  const handleNotSearch = () => {
+    searchTab==true?setSearchTab(false):setSearchTab(true)
+    setSearch(false)
+  }
+  const handleExplore = () => setExplore(true)
+  const handleNotExplore = () => setExplore(false)
+  const handleReels = () => setReels(true)
+  const handleNotReels = () => setReels(false)
+  const handleMessages = () => setMessages(true)
+  const handleNotMessages = () => setMessages(false)
+  const handleNotifications = () => setNotifications(true)
+  const handleNotNotifications = () => setNotifications(false)
 
   return (
     <>
@@ -97,16 +102,16 @@ const Navbar = ({ color }) => {
           }}
         >
           <List>
-            <ListItem sx={{
-              padding:'0px'
-            }} >
-              
-                {home ? (
-                  <Link to="/" style={{ textDecoration: 'none' }}>
+            <ListItem
+              sx={{
+                padding: '0px',
+              }}
+            >
+              {home ? (
+                <Link to="/" style={{ textDecoration: 'none' }}>
                   <ListItemButton
-                    sx={{ borderRadius: '50px',p:'12px' }}
+                    sx={{ borderRadius: '50px', p: '12px' }}
                     onClick={handleNotHome}
-                    
                   >
                     <ListItemIcon>
                       <img
@@ -119,39 +124,40 @@ const Navbar = ({ color }) => {
                       />
                     </ListItemIcon>
                     <ListItemText sx={{ ml: '12px' }}>
-                      <Typography sx={{ fontWeight: 500, color:'black' }}>Home</Typography>
+                      <Typography sx={{ fontWeight: 500, color: 'black' }}>
+                        Home
+                      </Typography>
                     </ListItemText>
                   </ListItemButton>
-                  </Link>
-                ) : (
-                  <ListItemButton
-                    sx={{ borderRadius: '50px',p:'12px' }}
-                    onClick={handleHome}
-                    
-                  >
-                    <ListItemIcon>
-                      <img
-                        src={images.home}
-                        alt="Logo"
-                        style={{
-                          maxWidth: '100%',
-                          height: '22px',
-                        }}
-                      />
-                    </ListItemIcon>
-                    <ListItemText sx={{ ml: '12px' }}>Home</ListItemText>
-                  </ListItemButton>
-                )}
-              
+                </Link>
+              ) : (
+                <ListItemButton
+                  sx={{ borderRadius: '50px', p: '12px' }}
+                  onClick={handleHome}
+                >
+                  <ListItemIcon>
+                    <img
+                      src={images.home}
+                      alt="Logo"
+                      style={{
+                        maxWidth: '100%',
+                        height: '22px',
+                      }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText sx={{ ml: '12px' }}>Home</ListItemText>
+                </ListItemButton>
+              )}
             </ListItem>
-            <ListItem sx={{
-              padding:'0px'
-            }} >
+            <ListItem
+              sx={{
+                padding: '0px',
+              }}
+            >
               {search ? (
                 <ListItemButton
-                  sx={{ borderRadius: '50px',p:'12px' }}
+                  sx={{ borderRadius: '50px', p: '12px' }}
                   onClick={handleNotSearch}
-                  
                 >
                   <ListItemIcon>
                     <img
@@ -164,16 +170,15 @@ const Navbar = ({ color }) => {
                     />
                   </ListItemIcon>
                   <ListItemText sx={{ ml: '12px' }}>
-                    <Typography sx={{ fontWeight: 500, color:'black' }}>
-                        Search
+                    <Typography sx={{ fontWeight: 500, color: 'black' }}>
+                      Search
                     </Typography>
-                    </ListItemText>
+                  </ListItemText>
                 </ListItemButton>
               ) : (
                 <ListItemButton
-                  sx={{ borderRadius: '50px',p:'12px' }}
+                  sx={{ borderRadius: '50px', p: '12px' }}
                   onClick={handleSearch}
-                  
                 >
                   <ListItemIcon>
                     <img
@@ -189,16 +194,16 @@ const Navbar = ({ color }) => {
                 </ListItemButton>
               )}
             </ListItem>
-            <ListItem sx={{
-              padding:'0px'
-            }} >
-              
-                {explore ? (
-                  <Link to="/explore" style={{ textDecoration: 'none' }}>
+            <ListItem
+              sx={{
+                padding: '0px',
+              }}
+            >
+              {explore ? (
+                <Link to="/explore" style={{ textDecoration: 'none' }}>
                   <ListItemButton
-                    sx={{ borderRadius: '50px',p:'12px' }}
+                    sx={{ borderRadius: '50px', p: '12px' }}
                     onClick={handleNotExplore}
-                    
                   >
                     <ListItemIcon>
                       <img
@@ -211,16 +216,16 @@ const Navbar = ({ color }) => {
                       />
                     </ListItemIcon>
                     <ListItemText sx={{ ml: '12px' }}>
-                      <Typography sx={{ fontWeight: 500, color:'black' }}>
+                      <Typography sx={{ fontWeight: 500, color: 'black' }}>
                         Explore
                       </Typography>
-                      </ListItemText>
+                    </ListItemText>
                   </ListItemButton>
-                  </Link>
-                ) : (
-                  <Link to="/explore" style={{ textDecoration: 'none' }}>
+                </Link>
+              ) : (
+                <Link to="/explore" style={{ textDecoration: 'none' }}>
                   <ListItemButton
-                    sx={{ borderRadius: '50px',p:'12px' }}
+                    sx={{ borderRadius: '50px', p: '12px' }}
                     onClick={handleExplore}
                   >
                     <ListItemIcon>
@@ -235,19 +240,19 @@ const Navbar = ({ color }) => {
                     </ListItemIcon>
                     <ListItemText sx={{ ml: '12px' }}>Explore</ListItemText>
                   </ListItemButton>
-                  </Link>
-                )}
-              
+                </Link>
+              )}
             </ListItem>
-            <ListItem sx={{
-              padding:'0px'
-            }} >
+            <ListItem
+              sx={{
+                padding: '0px',
+              }}
+            >
               <Link to="/reels/videos" style={{ textDecoration: 'none' }}>
                 {reels ? (
                   <ListItemButton
-                    sx={{ borderRadius: '50px',p:'12px' }}
+                    sx={{ borderRadius: '50px', p: '12px' }}
                     onClick={handleNotReels}
-                    
                   >
                     <ListItemIcon>
                       <img
@@ -260,16 +265,15 @@ const Navbar = ({ color }) => {
                       />
                     </ListItemIcon>
                     <ListItemText sx={{ ml: '12px' }}>
-                      <Typography sx={{ fontWeight: 500, color:'black' }}>
+                      <Typography sx={{ fontWeight: 500, color: 'black' }}>
                         Reels
                       </Typography>
-                      </ListItemText>
+                    </ListItemText>
                   </ListItemButton>
                 ) : (
                   <ListItemButton
-                    sx={{ borderRadius: '50px',p:'12px' }}
+                    sx={{ borderRadius: '50px', p: '12px' }}
                     onClick={handleReels}
-                    
                   >
                     <ListItemIcon>
                       <img
@@ -286,15 +290,16 @@ const Navbar = ({ color }) => {
                 )}
               </Link>
             </ListItem>
-            <ListItem sx={{
-              padding:'0px'
-            }} >
-                            <Link to="/direct/inbox" style={{ textDecoration: 'none' }}>
+            <ListItem
+              sx={{
+                padding: '0px',
+              }}
+            >
+              <Link to="/direct/inbox" style={{ textDecoration: 'none' }}>
                 {messages ? (
                   <ListItemButton
-                    sx={{ borderRadius: '50px',p:'12px',p:'0px' }}
+                    sx={{ borderRadius: '50px', p: '12px', p: '0px' }}
                     onClick={handleNotMessages}
-                    
                   >
                     <ListItemIcon>
                       <img
@@ -307,16 +312,15 @@ const Navbar = ({ color }) => {
                       />
                     </ListItemIcon>
                     <ListItemText sx={{ ml: '12px' }}>
-                      <Typography sx={{ fontWeight: 500, color:'black' }}>
+                      <Typography sx={{ fontWeight: 500, color: 'black' }}>
                         Messages
                       </Typography>
-                      </ListItemText>
+                    </ListItemText>
                   </ListItemButton>
                 ) : (
                   <ListItemButton
-                    sx={{ borderRadius: '50px',p:'12px' }}
+                    sx={{ borderRadius: '50px', p: '12px' }}
                     onClick={handleMessages}
-                    
                   >
                     <ListItemIcon>
                       <img
@@ -333,14 +337,15 @@ const Navbar = ({ color }) => {
                 )}
               </Link>
             </ListItem>
-            <ListItem sx={{
-              padding:'0px'
-            }} >
+            <ListItem
+              sx={{
+                padding: '0px',
+              }}
+            >
               {notifications ? (
                 <ListItemButton
-                  sx={{ borderRadius: '50px',p:'12px' }}
+                  sx={{ borderRadius: '50px', p: '12px' }}
                   onClick={handleNotNotifications}
-                  
                 >
                   <ListItemIcon>
                     <img
@@ -353,16 +358,15 @@ const Navbar = ({ color }) => {
                     />
                   </ListItemIcon>
                   <ListItemText sx={{ ml: '12px' }}>
-                    <Typography sx={{ fontWeight: 500, color:'black' }}>
+                    <Typography sx={{ fontWeight: 500, color: 'black' }}>
                       Notifications
                     </Typography>
-                    </ListItemText>
+                  </ListItemText>
                 </ListItemButton>
               ) : (
                 <ListItemButton
-                  sx={{ borderRadius: '50px',p:'12px' }}
+                  sx={{ borderRadius: '50px', p: '12px' }}
                   onClick={handleNotifications}
-                  
                 >
                   <ListItemIcon>
                     <img
@@ -378,59 +382,60 @@ const Navbar = ({ color }) => {
                 </ListItemButton>
               )}
             </ListItem>
-            <ListItem sx={{
-              padding:'0px'
-            }} >
-              {
-                create?(
-                  <ListItemButton
-                sx={{ borderRadius: '50px',p:'12px' }}
-                
-                onClick={handleOpen}
-              >
-                <ListItemIcon>
-                  <img
-                    src={images.selectedCreate}
-                    alt="Logo"
-                    style={{
-                      maxWidth: '100%',
-                      height: '22px',
-                    }}
-                  />
-                </ListItemIcon>
-                <ListItemText sx={{ ml: '12px' }}>
-                  <Typography sx={{ fontWeight: 500, color:'black' }}>
-                    Create
-                  </Typography>
+            <ListItem
+              sx={{
+                padding: '0px',
+              }}
+            >
+              {create ? (
+                <ListItemButton
+                  sx={{ borderRadius: '50px', p: '12px' }}
+                  onClick={handleOpen}
+                >
+                  <ListItemIcon>
+                    <img
+                      src={images.selectedCreate}
+                      alt="Logo"
+                      style={{
+                        maxWidth: '100%',
+                        height: '22px',
+                      }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText sx={{ ml: '12px' }}>
+                    <Typography sx={{ fontWeight: 500, color: 'black' }}>
+                      Create
+                    </Typography>
                   </ListItemText>
-              </ListItemButton>
-                ):(
-                  <ListItemButton
-                sx={{ borderRadius: '50px',p:'12px' }}
-                
-                onClick={handleOpen}
-              >
-                <ListItemIcon>
-                  <img
-                    src={images.create}
-                    alt="Logo"
-                    style={{
-                      maxWidth: '100%',
-                      height: '22px',
-                    }}
-                  />
-                </ListItemIcon>
-                <ListItemText sx={{ ml: '12px' }}>Create</ListItemText>
-              </ListItemButton>
-                )
-              }
-              
+                </ListItemButton>
+              ) : (
+                <ListItemButton
+                  sx={{ borderRadius: '50px', p: '12px' }}
+                  onClick={handleOpen}
+                >
+                  <ListItemIcon>
+                    <img
+                      src={images.create}
+                      alt="Logo"
+                      style={{
+                        maxWidth: '100%',
+                        height: '22px',
+                      }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText sx={{ ml: '12px' }}>Create</ListItemText>
+                </ListItemButton>
+              )}
             </ListItem>
-            <ListItem sx={{
-              padding:'0px'
-            }} >
+            <ListItem
+              sx={{
+                padding: '0px',
+              }}
+            >
               <Link to="/" style={{ textDecoration: 'none' }}>
-                <ListItemButton sx={{ borderRadius: '50px',p:'12px',p:'12px' }} >
+                <ListItemButton
+                  sx={{ borderRadius: '50px', p: '12px', p: '12px' }}
+                >
                   <ListItemIcon>
                     <img
                       src=""
@@ -537,6 +542,12 @@ const Navbar = ({ color }) => {
           </Box>
         </Box>
       </Modal>
+      <Search searchTab={searchTab}/>
+      {/* {searchTab && (<>
+      <Box sx={{ position: 'absolute', top: '50%', left: '50%', zIndex: '100', bgcolor:'red' }}>Hello</Box>
+      <Search searchTab={searchTab}/>
+      </> )      
+      } */}
     </>
   )
 }

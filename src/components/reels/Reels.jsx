@@ -1,6 +1,7 @@
 import { Box, Grid } from '@mui/material'
 import React from 'react'
 import Navbar from '../navbar/Navbar'
+import {RemoveScrollBar,noScrollbarsClassName} from 'react-remove-scroll-bar';
 import Images from '../images/index'
 
 const Reels = () => {
@@ -57,7 +58,13 @@ const Reels = () => {
           <Navbar />
         </Grid>
         <Grid item sm={10}>
-          <Box sx={{height:'100vh', overflowY:'scroll'}} >
+          <Box className='noScrollbarsClassName' sx={{height:'100vh', overflowY:'scroll',
+//           ':webkit-scrollbar': {
+//   display: 'none'
+// }
+
+        }} >
+          {/* <RemoveScrollBar /> */}
      <Box sx={{
               m:'1vh auto',
               width:'316px',
