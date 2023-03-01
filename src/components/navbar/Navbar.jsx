@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import createImg from '../images/create/layout.png'
 // import images from '../images'
 // import { theme } from '../../theme'
 import {
@@ -11,26 +12,17 @@ import {
   ListItemIcon,
   Modal,
   Typography,
+  Avatar,
 } from '@mui/material'
 import { Link } from 'react-router-dom'
 import images from '../images'
 import Search from '../search/Search'
+import searchCss from '../search/SearchCss'
+import Notifications from '../notifications/Notifications'
+import Create from '../create/Create'
 // import instaNameLogo from 'images/navbar/instaNameLogo.jpg'
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  maxWidth: 380,
-  width: '100%',
-  height: '380',
-  bgcolor: 'white',
-  // border: '2px solid #000',
-  boxShadow: 24,
-  borderRadius: '12px',
-  // p: '24px',
-}
+
 
 const Navbar = ({ color }) => {
   const [open, setOpen] = useState(false)
@@ -41,7 +33,8 @@ const Navbar = ({ color }) => {
   const [messages, setMessages] = useState(false)
   const [notifications, setNotifications] = useState(false)
   const [create, setCreate] = useState(false)
-  const [searchTab, setSearchTab] = useState(false)
+  const [notificationsTab, setNotificationsTab] = useState(false)
+  const [tab, setTab] = useState(false)
   const handleOpen = () => {
     setOpen(true)
     setCreate(true)
@@ -54,7 +47,8 @@ const Navbar = ({ color }) => {
   const handleNotHome = () => setHome(false)
   const handleSearch = () => setSearch(true)
   const handleNotSearch = () => {
-    searchTab==true?setSearchTab(false):setSearchTab(true)
+    // searchTab==true?setSearchTab(false):setSearchTab(true)
+    tab==true?setTab(false):setTab(true)
     setSearch(false)
   }
   const handleExplore = () => setExplore(true)
@@ -63,7 +57,11 @@ const Navbar = ({ color }) => {
   const handleNotReels = () => setReels(false)
   const handleMessages = () => setMessages(true)
   const handleNotMessages = () => setMessages(false)
-  const handleNotifications = () => setNotifications(true)
+  const handleNotifications = () => {
+    notificationsTab==true?setNotificationsTab(false):setNotificationsTab(true)
+    // notificationsTab==true?setNotifications(true):setNotifications(false)
+    setNotifications(!notifications)
+  } 
   const handleNotNotifications = () => setNotifications(false)
 
   return (
@@ -298,7 +296,7 @@ const Navbar = ({ color }) => {
               <Link to="/direct/inbox" style={{ textDecoration: 'none' }}>
                 {messages ? (
                   <ListItemButton
-                    sx={{ borderRadius: '50px', p: '12px', p: '0px' }}
+                    sx={{ borderRadius: '50px', p: '12px',  }}
                     onClick={handleNotMessages}
                   >
                     <ListItemIcon>
@@ -345,7 +343,7 @@ const Navbar = ({ color }) => {
               {notifications ? (
                 <ListItemButton
                   sx={{ borderRadius: '50px', p: '12px' }}
-                  onClick={handleNotNotifications}
+                  onClick={handleNotifications}
                 >
                   <ListItemIcon>
                     <img
@@ -437,14 +435,15 @@ const Navbar = ({ color }) => {
                   sx={{ borderRadius: '50px', p: '12px', p: '12px' }}
                 >
                   <ListItemIcon>
-                    <img
+                    {/* <img
                       src=""
                       alt="Logo"
                       style={{
                         maxWidth: '100%',
                         height: '22px',
                       }}
-                    />
+                    /> */}
+                    <Avatar sx={{ bgcolor: 'orangered', width:28,height:28, }}>S</Avatar>
                   </ListItemIcon>
                   <ListItemText sx={{ ml: '12px' }}>Profile</ListItemText>
                 </ListItemButton>
@@ -453,101 +452,10 @@ const Navbar = ({ color }) => {
           </List>
         </Box>
       </Box>
-
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderBottom: 1,
-              borderColor: '#DBDBDB',
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: '16px',
-                lineHeight: '24px',
-                fontWeight: '500',
-                margin: '8px 0px 8px 0px',
-              }}
-            >
-              Create new post
-            </Typography>
-          </Box>
-          <Box sx={{ p: 6, mt: 8, mb: 6 }}>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <img
-                src="images/create/layout.png"
-                alt="Logo"
-                style={{
-                  // maxWidth:'100%',
-                  height: 'auto',
-                  width: '74px',
-                }}
-              />
-              <Typography
-                mt="15px"
-                sx={{
-                  fontSize: '20px',
-                }}
-              >
-                Drag photos and videos here
-              </Typography>
-              <Button
-                className="file-input"
-                variant="contained"
-                component="label"
-                sx={{
-                  bgcolor: '#0095F6',
-                  ':hover': {
-                    bgcolor: '#0066B2',
-                  },
-                  borderRadius: '12px',
-                  color: 'white',
-                  p: '5px 16px',
-                  m: '20px 35px',
-                  textTransform: 'none',
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontSize: '14px',
-                    fontWeight: 600,
-                  }}
-                >
-                  Select From Computer
-                  <input
-                    hidden
-                    // accept="image/*"
-                    type="file"
-                  />
-                </Typography>
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-      </Modal>
-      <Search searchTab={searchTab}/>
-      {/* {searchTab && (<>
-      <Box sx={{ position: 'absolute', top: '50%', left: '50%', zIndex: '100', bgcolor:'red' }}>Hello</Box>
-      <Search searchTab={searchTab}/>
-      </> )      
-      } */}
+      
+      <Create create={create} setCreate={setCreate} open={open} setOpen={setOpen} />      
+      <Search tab={tab} setTab={setTab}/>
+      <Notifications notificationsTab={notificationsTab} setNotificationsTab={setNotificationsTab} />
     </>
   )
 }

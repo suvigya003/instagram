@@ -58,7 +58,7 @@ const Reels = () => {
           <Navbar />
         </Grid>
         <Grid item sm={10}>
-          <Box className='noScrollbarsClassName' sx={{height:'100vh', overflowY:'scroll',
+          <Box  sx={{height:'100vh', overflowY:'scroll',
 //           ':webkit-scrollbar': {
 //   display: 'none'
 // }

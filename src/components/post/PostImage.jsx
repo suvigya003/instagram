@@ -22,10 +22,10 @@ const PostImage = () => {
 
   const postStyle={
     // width:'60px',
-    // height:'600px',
+    // height:'100%',
     // position:'absolute',
-    // top:'50%',
-    // margin:'0 auto',
+    top:'50%',
+    // margin:'auto',
     display:'flex',
     alignItems:'center',
     justifyContent:'center',
